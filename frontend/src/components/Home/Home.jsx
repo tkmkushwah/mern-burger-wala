@@ -1,0 +1,43 @@
+import React from 'react'
+import { motion} from 'framer-motion'
+import Founder from './Founder';
+import '../../styles/founder.scss'
+import '../../styles/menu.scss'
+import Manu from './Manu';
+const Home = () => {
+  const options = {
+    initial: {
+      x: "-100%",
+      opacity: 0,
+    },
+    whileInView: {
+      x: 0,
+      opacity: 1,
+    },
+  };
+  return (
+    <>
+    <section className='home'>
+      <div>
+        <motion.h1 {...options}>Tikam Burger wala</motion.h1>
+        <motion.p {...options} transition={{delay:0.3,}}>I am your Tikam </motion.p>
+      </div>
+      <motion.a href="#menu" initial={{
+            y: "-100%",
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            delay: 0.4,
+          }}>Explore More</motion.a>
+    </section>
+    <Founder />
+    <Manu />
+    </>
+  )
+}
+
+export default Home
